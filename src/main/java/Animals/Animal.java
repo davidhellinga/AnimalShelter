@@ -2,6 +2,7 @@ package Animals;
 
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Animal {
     private String Name;

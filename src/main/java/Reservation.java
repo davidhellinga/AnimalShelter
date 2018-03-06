@@ -4,9 +4,12 @@ import Animals.Dog;
 import Animals.Gender;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 
-public class Reservation {
+public class Reservation extends Observable{
+
     public ArrayList<Animal> getAnimals() {
         return Animals;
     }
@@ -19,10 +22,14 @@ public class Reservation {
 
     public void NewCat(String name, Gender gender, String badHabits){
         Animals.add(new Cat(name, gender, badHabits));
+        setChanged();
+        notifyObservers();
     }
 
     public void NewDog(String name, Gender gender){
         Animals.add(new Dog(name,gender));
+        setChanged();
+        notifyObservers();
     }
 
 }
