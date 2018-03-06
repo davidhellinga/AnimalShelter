@@ -1,3 +1,5 @@
+package GUI;
+
 import javafx.fxml.Initializable;
 
 import java.net.URL;
