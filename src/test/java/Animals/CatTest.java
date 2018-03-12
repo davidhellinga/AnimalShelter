@@ -1,5 +1,6 @@
 package Animals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -7,9 +8,13 @@ import static org.junit.Assert.*;
 public class CatTest {
     private Cat cat;
 
+    @Before
+    public void CatGenerator() {
+        cat = new Cat("Ms. Meow", Gender.Female, "Scratches couch");
+    }
+
     @Test
     public void TestConstructor() {
-        cat=new Cat("Ms. Meow", Gender.Female, "Scratches couch");
         assertEquals("Ms. Meow", cat.getName());
         assertEquals(Gender.Female, cat.getGender());
         assertNull(cat.getReserver());
@@ -17,8 +22,7 @@ public class CatTest {
     }
 
     @Test
-    public void TestReservation(){
-        cat=new Cat("Ms. Meow", Gender.Female, "Scratches couch");
+    public void TestReservation() {
         assertNull(cat.getReserver());
         assertTrue(cat.Reserve("John Doe"));
         assertNotNull(cat.getReserver());
@@ -27,7 +31,7 @@ public class CatTest {
     }
 
     @Test
-    public void TestReservationTime(){
+    public void TestReservationTime() {
         // TODO: Implement this when interfaces have been explained.
         // We don't yet test the reserved time because it used the current
         // system clock to determine the result. Therefore we cannot check

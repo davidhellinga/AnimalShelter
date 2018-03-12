@@ -22,9 +22,8 @@ public class Dog extends Animal {
 
     public boolean NeedsWalk(){
         int temp1=LocalDate.now().compareTo(LastWalk);
-        boolean temp2=temp1==1;
 
-        return (temp2);
+        return (temp1==1);
     }
 
     @Override

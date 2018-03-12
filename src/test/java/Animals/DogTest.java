@@ -1,5 +1,6 @@
 package Animals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -8,9 +9,13 @@ public class DogTest {
 
     private Dog dog;
 
+    @Before
+    public void DogGenerator(){
+        dog=new Dog("Sgt. Woof", Gender.Male);
+    }
+
     @Test
     public void TestConstructor() {
-        dog=new Dog("Sgt. Woof", Gender.Male);
         assertEquals("Sgt. Woof", dog.getName());
         assertEquals(Gender.Male, dog.getGender());
         assertNull(dog.getReserver());
@@ -19,7 +24,6 @@ public class DogTest {
 
     @Test
     public void TestReservation(){
-        dog=new Dog("Sgt. Woof", Gender.Male);
         assertNull(dog.getReserver());
         assertTrue(dog.Reserve("John Doe"));
         assertNotNull(dog.getReserver());
