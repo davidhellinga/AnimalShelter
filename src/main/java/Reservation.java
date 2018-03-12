@@ -22,14 +22,17 @@ public class Reservation extends Observable{
 
     public void NewCat(String name, Gender gender, String badHabits){
         Animals.add(new Cat(name, gender, badHabits));
+        Notify();
+    }
+
+    private void Notify() {
         setChanged();
         notifyObservers();
     }
 
     public void NewDog(String name, Gender gender){
         Animals.add(new Dog(name,gender));
-        setChanged();
-        notifyObservers();
+        Notify();
     }
 
 }

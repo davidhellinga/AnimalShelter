@@ -13,10 +13,10 @@ import java.util.*;
 
 public class Controller implements Initializable {
 
-    public ListView shelter_animalList;
+    public ListView<String> shelter_animalList;
     public TextField shelter_reservor;
     public Button shelter_reservorConfirm;
-    public ListView shelter_info;
+    public ListView<String> shelter_info;
     public TextField shelter_infoEdit;
     public Button shelter_infoEditConfirm;
 
@@ -32,22 +32,21 @@ public class Controller implements Initializable {
     Reservation reservation = new Reservation();
 
     public Controller() {
-        reservation.addObserver(new Observer() {
-            @Override
-            public void update(Observable o, Object arg) {
-                shelter_animalList.getItems().clear();
-                for (Animal animal: reservation.getAnimals()){
-                    shelter_animalList.getItems().add(animal.getName());
-                }
-            }
+        reservation.addObserver((o, arg) -> {
+            shelter_animalList.getItems().clear();
+            PopulateAnimalList();
         });
+    }
+
+    private void PopulateAnimalList() {
+        for (Animal animal: reservation.getAnimals()){
+            shelter_animalList.getItems().add(animal.getName());
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (Animal animal: reservation.getAnimals()){
-            shelter_animalList.getItems().add(animal.getName());
-        }
+        PopulateAnimalList();
     }
 
     public boolean AddAnimal(ActionEvent actionEvent) {
@@ -57,11 +56,10 @@ public class Controller implements Initializable {
         if (animalType == AnimalType.Cat) {
             reservation.NewCat(name, gender, addAnimal_tb_BadHabit.textProperty().get());
             return true;
-        } else if (animalType == AnimalType.Dog) {
+        } else {
             reservation.NewDog(name, gender);
             return true;
         }
-        return false;
     }
 
 
