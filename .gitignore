@@ -41,4 +41,4 @@ build/
 .idea/.name
 .idea/artifacts/dist_auto_*
 kotlin-ultimate/
-!**/test/*
+!**/target/*

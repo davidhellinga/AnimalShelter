@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="animal.CatTest" time="0.043" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="animal.CatTest" time="0.074" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2018.3.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="E:\Program Files (x86)\JetBrains\apps\IDEA-U\ch-0\183.5429.30\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2018.3.4 install"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2018.3.4 test"/>
     <property name="java.home" value="E:\Program Files\Java\jdk-11.0.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -63,8 +63,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="price is set to correct value for automatic pricing" classname="animal.CatTest" time="0.016"/>
+  <testcase name="price is set to correct value for automatic pricing" classname="animal.CatTest" time="0.042"/>
   <testcase name="price is set to correct value for manual pricing" classname="animal.CatTest" time="0"/>
-  <testcase name="cat is correctly reserved" classname="animal.CatTest" time="0.022"/>
-  <testcase name="cat constructor creates cat with input data" classname="animal.CatTest" time="0"/>
+  <testcase name="cat is correctly reserved" classname="animal.CatTest" time="0.025"/>
+  <testcase name="cat constructor creates cat with input data" classname="animal.CatTest" time="0.001"/>
 </testsuite>
