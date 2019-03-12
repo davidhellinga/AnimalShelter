@@ -61,7 +61,7 @@
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>src/test/kotlin-test</sourceDir>
+                                <sourceDir>${project.basedir}/src/test/kotlin-test</sourceDir>
                                 <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
