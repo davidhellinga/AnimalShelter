@@ -3,7 +3,7 @@ package main.kotlin.animal
 class Cat(
     name: String,
     gender: Gender,
-    private val badHabits: String,
+    val badHabits: String,
     override val price: Double = badHabits.let {
         var temp = (350.0 - 20.0 * badHabits.length)
         if (temp < 35.0) temp = 35.0
