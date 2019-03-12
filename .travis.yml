@@ -1,8 +1,7 @@
 language: java
+sudo: false
 jdk:
   - oraclejdk11
-
-install: mvn install
 script:
   - mvn test -B
   - mvn cobertura:cobertura
